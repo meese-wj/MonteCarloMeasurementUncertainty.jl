@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+MonteCarloMeasurements = "0a594e34-94bc-4f62-947f-4b31ef19552b"
