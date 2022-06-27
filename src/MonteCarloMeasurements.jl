@@ -12,12 +12,12 @@ export MonteCarloMeasurement, TimeSeries, AccumulatedSeries,
 Abstract type that provides an interface for all `MonteCarloMeasurements`.
 
 !!! warning
-    # Required Interface Functions
+    ### Required Interface Functions
     The following _functions_ __must__ have `methods` defined for each new `MonteCarloMeasurement`.
     * [`push!`](@ref): Move a new measurement into the `MonteCarloMeasurement` instance.
 
 !!! note
-    # Default Interface Functions
+    ### Default Interface Functions
     The following _functions_ have a default `method` for any given `MonteCarloMeasurement`.
         * [`name`](@ref): Define a `name` for a given `MonteCarloMeasurement` 
 """
