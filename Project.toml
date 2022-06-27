@@ -3,6 +3,10 @@ uuid = "0a594e34-94bc-4f62-947f-4b31ef19552b"
 authors = ["W. Joe Meese <meese022@umn.edu> and contributors"]
 version = "0.1.0"
 
+[deps]
+OnlineLogBinning = "6694b27a-7f2b-41da-9dea-d3f4793b6534"
+TelegraphNoise = "843dd301-5ab4-451e-a248-fc72ff48def4"
+
 [compat]
 julia = "1.3"
 
