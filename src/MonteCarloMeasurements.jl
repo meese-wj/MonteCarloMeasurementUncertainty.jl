@@ -4,7 +4,7 @@ using OnlineLogBinning
 
 export MonteCarloMeasurement, TimeSeries, AccumulatedSeries,
        # General MonteCarloMeasurement interface functions
-       name, push!
+       name, push!, binning_analysis
 
 """
     MonteCarloMeasurement
@@ -26,6 +26,7 @@ abstract type MonteCarloMeasurement end
 # * Required Interface Functions ************************************************************************************
 # *******************************************************************************************************************
 push!(meas::MonteCarloMeasurement, value) = throw(MethodError(push!, (meas, value,)))
+binning_analysis(meas::MonteCarloMeasurement) = throw(MethodError(binning_analysis, (meas,)))
 
 # *******************************************************************************************************************
 # * Default Interface Functions *************************************************************************************
