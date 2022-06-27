@@ -15,3 +15,10 @@ struct AccumulatedSeries{T <: Number} <: MonteCarloMeasurement
     AccumulatedSeries{T}(name = "") where {T <: Number} = new( name, BinningAccumulator{T}() ) 
     AccumulatedSeries(name = "") = AccumulatedSeries{Float64}(name)
 end
+
+"""
+    push!(meas::AccumulatedSeries, value)
+
+`push!` a single `value` or many `value`s into a [`AccumulatedSeries`] `datastream`.
+"""
+push!(meas::AccumulatedSeries, value) = begin push!(meas.datastream, value); return meas end
