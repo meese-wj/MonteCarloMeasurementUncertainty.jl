@@ -19,7 +19,7 @@ Abstract type that provides an interface for all `MonteCarloMeasurements`.
 !!! note
     ### Default Interface Functions
     The following _functions_ have a default `method` for any given `MonteCarloMeasurement`.
-        * [`name`](@ref): Define a `name` for a given `MonteCarloMeasurement` 
+    * [`name`](@ref): Define a `name` for a given `MonteCarloMeasurement` instance. 
 """
 abstract type MonteCarloMeasurement end
 # *******************************************************************************************************************
