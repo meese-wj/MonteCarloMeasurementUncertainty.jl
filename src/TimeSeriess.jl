@@ -10,7 +10,7 @@ A type of [`MonteCarloMeasurement`](@ref) that stores the measurements in a
 `datastream::Vector{T}`. Statistics are not accumulated in an _online_
 way.
 """
-struct TimeSeries{T <: Number} <: MonteCarloMeasurement
+mutable struct TimeSeries{T <: Number} <: MonteCarloMeasurement
     name::String
     current_index::Int
     datastream::Vector{T}
