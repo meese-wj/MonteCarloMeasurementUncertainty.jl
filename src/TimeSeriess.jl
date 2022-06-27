@@ -64,3 +64,15 @@ function push!(meas::TimeSeries, values)
     end
     return meas
 end
+
+"""
+    binning_analysis(meas::TimeSeries)
+
+Construct a `BinningAccumulator` and `push!` the datastream into it.
+Then return the newly constructed `BinningAccumulator`.
+"""
+function binning_analysis(meas::TimeSeries) 
+    bacc = BinningAccumulator{eltype(meas)}()
+    push!(bacc, meas.datastream)
+    return bacc
+end

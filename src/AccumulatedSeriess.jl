@@ -22,3 +22,10 @@ end
 `push!` a single `value` or many `value`s into a [`AccumulatedSeries`] `datastream`.
 """
 push!(meas::AccumulatedSeries, value) = begin push!(meas.datastream, value); return meas end
+
+"""
+    binning_analysis(meas::AccumulatedSeries)
+
+Return the `BinningAccumulator` from the [`AccumulatedSeries`](@ref).
+"""
+binning_analysis(meas::AccumulatedSeries) = meas.datastream
