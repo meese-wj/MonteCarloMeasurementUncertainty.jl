@@ -73,6 +73,6 @@ Then return the newly constructed `BinningAccumulator`.
 """
 function binning_analysis(meas::TimeSeries) 
     bacc = BinningAccumulator{eltype(meas)}()
-    push!(bacc, meas.datastream)
+    OnlineLogBinning.push!(bacc, meas.datastream)
     return bacc
 end
