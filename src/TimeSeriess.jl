@@ -15,8 +15,8 @@ mutable struct TimeSeries{T <: Number} <: MonteCarloMeasurement
     current_index::Int
     datastream::Vector{T}
 
-    TimeSeries{T}(name = "", size = 1) where {T <: Number} = new(name, 1, zeros(T, size))
-    TimeSeries(name = "", size = 1) = TimeSeries{Float64}(name, size)
+    TimeSeries{T}(name = "", size = one(Int)) where {T <: Number} = new(name, one(Int), zeros(T, size))
+    TimeSeries(name = "", size = one(Int)) = TimeSeries{Float64}(name, size)
 end
 
 """
@@ -37,11 +37,11 @@ then the datastream is `resize!`d when the value is pushed. Can result in
 function push!(meas::TimeSeries, single_value::Number)
     if meas.current_index == length(meas.datastream)
         push!(meas.datastream, convert(eltype(meas), single_value))
-        meas.current_index += 1
+        meas.current_index += one(Int)
         return meas
     end
     meas.datastream[meas.current_index] = convert(eltype(meas), single_value)
-    meas.current_index += 1
+    meas.current_index += one(Int)
     return meas
 end
 
@@ -57,7 +57,7 @@ preallocate the requisite memory with [`TimeSeries`](@ref)`(name, size)`.
 """
 function push!(meas::TimeSeries, values)
     if length(values) + meas.current_index > length(meas.datastream)
-        resize!(meas.datastream, length(values) + meas.current_index)
+        resize!(meas.datastream, length(values) + meas.current_index - one(Int))
     end
     for val ∈ values
         push!(meas, val)
