@@ -35,7 +35,7 @@ then the datastream is `resize!`d when the value is pushed. Can result in
 `O(n)` complexity.
 """
 function push!(meas::TimeSeries, single_value::Number)
-    if meas.current_index == length(meas.datastream)
+    if meas.current_index == length(meas.datastream) + one(Int)
         Base.push!(meas.datastream, convert(eltype(meas), single_value))
         meas.current_index += one(Int)
         return meas
