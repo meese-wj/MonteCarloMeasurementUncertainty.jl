@@ -19,11 +19,25 @@ struct TimeSeries{T <: Number} <: MonteCarloMeasurement
     TimeSeries(name = "", size = 1) = TimeSeries{Float64}(name, size)
 end
 
+"""
+    eltype(meas::TimeSeries)
+
+Base overload of `eltype`. A wrapper around `eltype(meas.datastream)`.
+"""
 Base.eltype(meas::TimeSeries) = eltype(meas.datastream)
 
+"""
+    push!(meas::TimeSeries, single_value::Number)
+
+`push!` a single numerical value into the datastream. If the current
+datastream is full, meaning `length(meas.datastream) == meas.current_index`,
+then the datastream is `resize!`d when the value is pushed. Can result in
+`O(n)` complexity.
+"""
 function push!(meas::TimeSeries, single_value::Number)
     if meas.current_index == length(meas.datastream)
         push!(meas.datastream, convert(eltype(meas), single_value))
+        meas.current_index += 1
         return meas
     end
     meas.datastream[meas.current_index] = convert(eltype(meas), single_value)
@@ -31,7 +45,20 @@ function push!(meas::TimeSeries, single_value::Number)
     return meas
 end
 
+"""
+    push!(meas::TimeSeries, value)
+
+`push!` an iterable many `value`s into a [`TimeSeries`] `datastream`.
+
+# Additional Information
+If the values are sufficiently long, this will trigger the `datastream` to
+be `resize!`d which can have `O(n)` complexity. It is preferred to 
+preallocate the requisite memory with [`TimeSeries`](@ref)`(name, size)`.
+"""
 function push!(meas::TimeSeries, values)
+    if length(values) + meas.current_index > length(meas.datastream)
+        resize!(meas.datastream, length(values) + meas.current_index)
+    end
     for val ∈ values
         push!(meas, val)
     end
