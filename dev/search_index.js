@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"api/#MonteCarloMeasurements-API","page":"API Reference","title":"MonteCarloMeasurements API","text":"","category":"section"},{"location":"api/","page":"API Reference","title":"API Reference","text":"","category":"page"},{"location":"api/","page":"API Reference","title":"API Reference","text":"Modules = [MonteCarloMeasurements]","category":"page"},{"location":"","page":"Home","title":"Home","text":"CurrentModule = MonteCarloMeasurements","category":"page"},{"location":"#MonteCarloMeasurements","page":"Home","title":"MonteCarloMeasurements","text":"","category":"section"},{"location":"","page":"Home","title":"Home","text":"Documentation for MonteCarloMeasurements.","category":"page"}]
+}
