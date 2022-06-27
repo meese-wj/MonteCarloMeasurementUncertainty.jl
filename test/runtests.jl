@@ -2,5 +2,10 @@ using MonteCarloMeasurements
 using Test
 
 @testset "MonteCarloMeasurements.jl" begin
-    # Write your tests here.
+    
+    @testset "name" begin
+        @test name(TimeSeries("Walter White")) == "Walter White"
+        @test name(AccumulatedSeries("Jessie Pinkman")) == "Jessie Pinkman"
+    end
+    
 end
