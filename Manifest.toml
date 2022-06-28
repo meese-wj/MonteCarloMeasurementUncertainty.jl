@@ -52,7 +52,7 @@ uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[deps.OnlineLogBinning]]
 deps = ["StaticArrays", "Statistics"]
-git-tree-sha1 = "ebd6b61bd41b172d91a03a0c0fffc3ec29fb955e"
+git-tree-sha1 = "0457e006631dce5b68b90735210b6604d55d709d"
 repo-rev = "main"
 repo-url = "https://github.com/meese-wj/OnlineLogBinning.jl"
 uuid = "6694b27a-7f2b-41da-9dea-d3f4793b6534"

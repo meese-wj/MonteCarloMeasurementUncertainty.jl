@@ -1,8 +1,6 @@
 # The misspelling of TimeSeries is to conform to Julia standards.
 # Unfortunately 'Series' is both plural and singular 😢
 
-using Base
-
 """
     TimeSeries{T <: Number} <: MonteCarloMeasurement
 

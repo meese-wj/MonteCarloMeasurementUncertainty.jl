@@ -1,6 +1,6 @@
 module MonteCarloMeasurements
 
-using OnlineLogBinning
+import OnlineLogBinning: BinningAccumulator, push!
 
 export MonteCarloMeasurement, TimeSeries, AccumulatedSeries,
        # General MonteCarloMeasurement interface functions
