@@ -22,7 +22,7 @@ end
 
 Base overload of `eltype`. A wrapper around `eltype(meas.datastream)`.
 """
-Base.eltype(meas::TimeSeries) = eltype(meas.datastream)
+eltype(meas::TimeSeries) = eltype(meas.datastream)
 
 """
     push!(meas::TimeSeries, single_value::Number)
@@ -34,7 +34,7 @@ then the datastream is `resize!`d when the value is pushed. Can result in
 """
 function push!(meas::TimeSeries, single_value::Number)
     if meas.current_index == length(meas.datastream) + one(Int)
-        Base.push!(meas.datastream, convert(eltype(meas), single_value))
+        push!(meas.datastream, convert(eltype(meas), single_value))
         meas.current_index += one(Int)
         return meas
     end
@@ -71,6 +71,6 @@ Then return the newly constructed `BinningAccumulator`.
 """
 function binning_analysis(meas::TimeSeries) 
     bacc = BinningAccumulator{eltype(meas)}()
-    OnlineLogBinning.push!(bacc, meas.datastream)
+    push!(bacc, meas.datastream)
     return bacc
 end
