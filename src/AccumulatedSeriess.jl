@@ -28,4 +28,4 @@ push!(meas::AccumulatedSeries, value) = begin push!(meas.datastream, value); ret
 
 Return the `BinningAccumulator` from the [`AccumulatedSeries`](@ref).
 """
-binning_analysis(meas::AccumulatedSeries) = meas.datastream
+binning_analysis(meas::AccumulatedSeries) = fit_RxValues(meas.datastream)
