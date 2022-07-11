@@ -64,19 +64,6 @@ julia> for idx ∈ 1:Int(2^18) push!(acc, idx % 512) end;
 julia> measurement(acc)
 255.5 ± 2.3
 ```
-Compare this [`measurement`](https://github.com/JuliaPhysics/Measurements.jl/blob/5e84abee8ca66205d21cd654e9a2d7aa6fab9923/src/Measurements.jl#L106-L119)
-outcome to that of the [`binning_analysis`](@ref).
-
-```jldoctest measurement_example
-julia> binning_analysis(acc) 
-Binning Analysis Result:
-    Plateau Present:             true
-    Fitted Rx Plateau:           61.513088051303235
-    Autocorrelation time τₓ:     30.256544025651618
-    Effective Datastream Length: 4261
-    Binning Analysis Mean:       255.5
-    Binning Analysis Error:      2.264245800097835
-```
 """
 function measurement(obs::MonteCarloMeasurement) 
     result = binning_analysis(obs)
