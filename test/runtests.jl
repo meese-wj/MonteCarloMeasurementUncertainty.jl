@@ -1,5 +1,6 @@
 using MonteCarloMeasurements
 using Test
+using Documenter
 
 @testset "MonteCarloMeasurements.jl" begin
     
@@ -20,5 +21,10 @@ using Test
             test_thing = Thing(42)
             binning_analysis(test_thing)
         end
+    end
+
+    @testset "Doctests" begin
+        DocMeta.setdocmeta!(MonteCarloMeasurements, :DocTestSetup, :(using MonteCarloMeasurements); recursive=true)
+        doctest(MonteCarloMeasurements)
     end
 end
