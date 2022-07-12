@@ -3,15 +3,15 @@
 
 """
     AccumulatedSeries{T}(::String = "")  (default T == Float64)
-    AccumulatedSeries{T}(::Int, ::String = "")  (default T == Float64)
+    AccumulatedSeries{T}(::String = "", [::Int])  (default T == Float64)
 
 A type of [`MonteCarloMeasurement`](@ref) that accumulates statistics for a 
 given observable while performing an _online_ binning analysis provided
 by [`OnlineLogBinning.jl`](https://meese-wj.github.io/OnlineLogBinning.jl/stable/).
 
 !!! note 
-    The _pre-allocated_ [`AccumulatedSeries`](@ref) takes an `Int`eger as the first argument,
-    and a `String` as the second.
+    The _pre-allocated_ [`AccumulatedSeries`](@ref) takes a `String` as the first argument
+    and an `Int`eger denoting the anticipated datastream length as the second.
 """
 struct AccumulatedSeries{T <: Number} <: MonteCarloMeasurement
     name::String
@@ -20,8 +20,13 @@ struct AccumulatedSeries{T <: Number} <: MonteCarloMeasurement
     AccumulatedSeries{T}(name = "") where {T <: Number} = new( name, BinningAccumulator{T}() ) 
     AccumulatedSeries(name = "") = AccumulatedSeries{Float64}(name)
 
-    AccumulatedSeries{T}(stream_length::Int, name = "") where {T} = new(name, BinningAccumulator{T}(stream_length))
-    AccumulatedSeries(stream_length::Int, name = "") = AccumulatedSeries{Float64}(stream_length, name)
+    function AccumulatedSeries{T}(name = "", stream_length::Int = zero(Int)) where {T}
+        if stream_length == zero(Int)
+            return AccumulatedSeries{T}(name)
+        end
+        return new(name, BinningAccumulator{T}(stream_length))
+    end
+    AccumulatedSeries(name = "", stream_length::Int = zero(Int)) = AccumulatedSeries{Float64}(name, stream_length)
 end
 
 """
