@@ -70,7 +70,7 @@ Construct a `BinningAccumulator` and `push!` the datastream into it.
 Then return the newly constructed `BinningAccumulator`.
 """
 function binning_analysis(meas::TimeSeries) 
-    bacc = BinningAccumulator{eltype(meas)}()
+    bacc = BinningAccumulator{eltype(meas)}(length(meas.datastream))
     push!(bacc, meas.datastream)
     return fit_RxValues(bacc)
 end
