@@ -4,4 +4,13 @@ CurrentModule = MonteCarloMeasurements
 
 # MonteCarloMeasurements
 
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://meese-wj.github.io/MonteCarloMeasurements.jl/stable)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://meese-wj.github.io/MonteCarloMeasurements.jl/dev)
+[![Build Status](https://github.com/meese-wj/MonteCarloMeasurements.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/meese-wj/MonteCarloMeasurements.jl/actions/workflows/CI.yml?query=branch%3Amain)
+
 Documentation for [MonteCarloMeasurements](https://github.com/meese-wj/MonteCarloMeasurements.jl).
+
+```@contents
+Pages = ["what_is_a_mcmeasurement.md", "example_usage.md", "api.md"]
+Depth = 5
+```
