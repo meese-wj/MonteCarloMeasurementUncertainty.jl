@@ -10,6 +10,7 @@ TelegraphNoise = "843dd301-5ab4-451e-a248-fc72ff48def4"
 
 [compat]
 OnlineLogBinning = "0.2.2"
+Measurements = "2"
 TelegraphNoise = "0.1"
 julia = "1.3"
 
