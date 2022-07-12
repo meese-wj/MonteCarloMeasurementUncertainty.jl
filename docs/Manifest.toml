@@ -120,9 +120,9 @@ version = "0.8.6"
 
 [[deps.Documenter]]
 deps = ["ANSIColoredPrinters", "Base64", "Dates", "DocStringExtensions", "IOCapture", "InteractiveUtils", "JSON", "LibGit2", "Logging", "Markdown", "REPL", "Test", "Unicode"]
-git-tree-sha1 = "f7809f532671564e48cd81627ddcfb1ba670f87d"
+git-tree-sha1 = "e4967ebb9dce1328d582200b03bcc44c69372312"
 uuid = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-version = "0.27.19"
+version = "0.27.20"
 
 [[deps.Downloads]]
 deps = ["ArgTools", "LibCURL", "NetworkOptions"]
@@ -287,9 +287,9 @@ uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
 [[deps.OnlineLogBinning]]
 deps = ["LsqFit", "StaticArrays", "Statistics"]
-git-tree-sha1 = "8b8621f319e0f2fb0bb7ea8320bec33679d06d18"
+git-tree-sha1 = "84044506bbd1f4502d0300602ef7ecb48e4855c3"
 uuid = "6694b27a-7f2b-41da-9dea-d3f4793b6534"
-version = "0.2.1"
+version = "0.2.2"
 
 [[deps.OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
@@ -427,9 +427,9 @@ version = "1.0.0"
 
 [[deps.StaticArrays]]
 deps = ["LinearAlgebra", "Random", "StaticArraysCore", "Statistics"]
-git-tree-sha1 = "9f8a5dc5944dc7fbbe6eb4180660935653b0a9d9"
+git-tree-sha1 = "e972716025466461a3dc1588d9168334b71aafff"
 uuid = "90137ffa-7385-5640-81b9-e52037218182"
-version = "1.5.0"
+version = "1.5.1"
 
 [[deps.StaticArraysCore]]
 git-tree-sha1 = "66fe9eb253f910fe8cf161953880cfdaef01cdf0"
