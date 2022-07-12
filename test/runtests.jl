@@ -35,6 +35,21 @@ using Documenter
             end)
         end
 
+        @testset "Analysis Equivalence" begin
+            for obs_type ∈ (:TimeSeries, :AccumulatedSeries)
+                eval(quote
+                    $( Symbol("acc_$(obs_type)") ) = $obs_type()
+                    for idx ∈ 1:Int(2^18) push!($( Symbol("acc_$(obs_type)") ), idx % 512) end
+                    $( Symbol("result_$(obs_type)") ) = binning_analysis($( Symbol("acc_$(obs_type)") ))
+                end)
+            end
+        
+            @test result_TimeSeries.plateau_found == result_AccumulatedSeries.plateau_found
+            @test result_TimeSeries.RxAmplitude ≈ result_AccumulatedSeries.RxAmplitude
+            @test result_TimeSeries.effective_length == result_AccumulatedSeries.effective_length
+            @test result_TimeSeries.binning_mean ≈ result_AccumulatedSeries.binning_mean
+            @test result_TimeSeries.binning_error ≈ result_AccumulatedSeries.binning_error
+        end
     end
 
     @testset "Doctests" begin
