@@ -32,6 +32,11 @@ using Documenter
                 meas = measurement(acc)
                 @test meas.val ≈ 255.5 
                 @test isapprox(meas.err, 2.264245; atol = 1e-6)
+
+                # check for proper propagated error from Measurements.jl
+                prop_meas = (meas / meas.val)^2 - meas / meas.val + meas / meas.val * exp( - (meas / meas.val) )
+                @test prop_meas.val ≈ exp(-1)
+                @test prop_meas.err ≈ ( meas.err / meas.val )
             end)
         end
 
