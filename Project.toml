@@ -9,7 +9,7 @@ OnlineLogBinning = "6694b27a-7f2b-41da-9dea-d3f4793b6534"
 TelegraphNoise = "843dd301-5ab4-451e-a248-fc72ff48def4"
 
 [compat]
-OnlineLogBinning = "0.2"
+OnlineLogBinning = "0.2.2"
 TelegraphNoise = "0.1"
 julia = "1.3"
 

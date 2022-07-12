@@ -2,7 +2,7 @@ module MonteCarloMeasurements
 
 # Module imports
 import Base: eltype, push!
-import OnlineLogBinning: BinningAccumulator, fit_RxValues
+import OnlineLogBinning: BinningAccumulator, LevelAccumulator, binning_level, fit_RxValues
 import Measurements: measurement
 
 export MonteCarloMeasurement, TimeSeries, AccumulatedSeries,
