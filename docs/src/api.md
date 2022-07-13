@@ -1,8 +1,8 @@
-# MonteCarloMeasurements API
+# MonteCarloMeasurementUncertainty API
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [MonteCarloMeasurements]
+Modules = [MonteCarloMeasurementUncertainty]
 ```

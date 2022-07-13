@@ -1,4 +1,4 @@
-module MonteCarloMeasurements
+module MonteCarloMeasurementUncertainty
 
 # Module imports
 import Base: eltype, push!
@@ -12,7 +12,7 @@ export MonteCarloMeasurement, TimeSeries, AccumulatedSeries,
 """
     MonteCarloMeasurement
 
-Abstract type that provides an interface for all `MonteCarloMeasurements`.
+Abstract type that provides an interface for all `MonteCarloMeasurement`s.
 
 !!! warning
     ### Required Interface Functions
@@ -71,7 +71,7 @@ function measurement(obs::MonteCarloMeasurement)
 end
 
 # *******************************************************************************************************************
-# * Defined subtypes of MonteCarloMeasurements **********************************************************************
+# * Defined subtypes of `MonteCarloMeasurement`s **********************************************************************
 # *******************************************************************************************************************
 
 # The misspelling of Series is to conform to Julia standards.

@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = MonteCarloMeasurements
+CurrentModule = MonteCarloMeasurementUncertainty
 ```
 
 # What is a [`MonteCarloMeasurement`](@ref)?

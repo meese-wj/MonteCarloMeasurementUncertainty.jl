@@ -1,8 +1,8 @@
-using MonteCarloMeasurements
+using MonteCarloMeasurementUncertainty
 using Test
 using Documenter
 
-@testset "MonteCarloMeasurements.jl" begin
+@testset "MonteCarloMeasurementUncertainty.jl" begin
     
     @testset "name" begin
         @test name(TimeSeries("Walter White")) == "Walter White"
@@ -58,7 +58,7 @@ using Documenter
     end
 
     @testset "Doctests" begin
-        DocMeta.setdocmeta!(MonteCarloMeasurements, :DocTestSetup, :(using MonteCarloMeasurements); recursive=true)
-        doctest(MonteCarloMeasurements)
+        DocMeta.setdocmeta!(MonteCarloMeasurementUncertainty, :DocTestSetup, :(using MonteCarloMeasurementUncertainty); recursive=true)
+        doctest(MonteCarloMeasurementUncertainty)
     end
 end

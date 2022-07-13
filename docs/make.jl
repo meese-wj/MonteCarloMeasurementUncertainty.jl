@@ -1,16 +1,16 @@
-using MonteCarloMeasurements
+using MonteCarloMeasurementUncertainty
 using Documenter
 
-DocMeta.setdocmeta!(MonteCarloMeasurements, :DocTestSetup, :(using MonteCarloMeasurements); recursive=true)
+DocMeta.setdocmeta!(MonteCarloMeasurementUncertainty, :DocTestSetup, :(using MonteCarloMeasurementUncertainty); recursive=true)
 
 makedocs(;
-    modules=[MonteCarloMeasurements],
+    modules=[MonteCarloMeasurementUncertainty],
     authors="W. Joe Meese <meese022@umn.edu> and contributors",
-    repo="https://github.com/meese-wj/MonteCarloMeasurements.jl/blob/{commit}{path}#{line}",
-    sitename="MonteCarloMeasurements.jl",
+    repo="https://github.com/meese-wj/MonteCarloMeasurementUncertainty.jl/blob/{commit}{path}#{line}",
+    sitename="MonteCarloMeasurementUncertainty.jl",
     format=Documenter.HTML(;
         prettyurls=get(ENV, "CI", "false") == "true",
-        canonical="https://meese-wj.github.io/MonteCarloMeasurements.jl",
+        canonical="https://meese-wj.github.io/MonteCarloMeasurementUncertainty.jl",
         assets=String[],
     ),
     pages=[
@@ -22,6 +22,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo="github.com/meese-wj/MonteCarloMeasurements.jl",
+    repo="github.com/meese-wj/MonteCarloMeasurementUncertainty.jl",
     devbranch="main",
 )

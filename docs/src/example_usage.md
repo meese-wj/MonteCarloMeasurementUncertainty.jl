@@ -1,11 +1,11 @@
 
 ```@meta
-CurrentModule = MonteCarloMeasurements
-DocTestSetup = quote using MonteCarloMeasurements end
+CurrentModule = MonteCarloMeasurementUncertainty
+DocTestSetup = quote using MonteCarloMeasurementUncertainty end
 ```
 
 ```@setup usage
-using MonteCarloMeasurements
+using MonteCarloMeasurementUncertainty
 ```
 
 # Example [`MonteCarloMeasurement`](@ref) Usage
@@ -100,7 +100,7 @@ julia> measurement(a_series)
 -3.6e-16 ± 0.013
 ```
 
-Importantly, this then provides an interface between this [`MonteCarloMeasurements.jl`](https://meese-wj.github.io/MonteCarloMeasurements.jl/stable) package and the utilities found in the [`Measurements.jl`](https://juliaphysics.github.io/Measurements.jl/stable/) package since the return type of [`measurement`](@ref) is given by
+Importantly, this then provides an interface between this [`MonteCarloMeasurementUncertainty.jl`](https://meese-wj.github.io/MonteCarloMeasurementUncertainty.jl/stable) package and the utilities found in the [`Measurements.jl`](https://juliaphysics.github.io/Measurements.jl/stable/) package since the return type of [`measurement`](@ref) is given by
 
 ```jldoctest usage
 julia> typeof( measurement(t_series) )

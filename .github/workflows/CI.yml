@@ -54,6 +54,6 @@ jobs:
       - run: |
           julia --project=docs -e '
             using Documenter: DocMeta, doctest
-            using MonteCarloMeasurements
-            DocMeta.setdocmeta!(MonteCarloMeasurements, :DocTestSetup, :(using MonteCarloMeasurements); recursive=true)
-            doctest(MonteCarloMeasurements)'
+            using MonteCarloMeasurementUncertainty
+            DocMeta.setdocmeta!(MonteCarloMeasurementUncertainty, :DocTestSetup, :(using MonteCarloMeasurementUncertainty); recursive=true)
+            doctest(MonteCarloMeasurementUncertainty)'
