@@ -1,4 +1,4 @@
-# MonteCarloMeasurementUncertainty API
+# MonteCarloMeasurementUncertainty (MCMU) API
 
 ```@index
 ```

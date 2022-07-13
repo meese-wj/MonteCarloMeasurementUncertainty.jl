@@ -16,7 +16,7 @@ makedocs(;
     pages=[
         "Home" => "index.md",
         "What is a MonteCarloMeasurement?" => "what_is_a_mcmeasurement.md",
-        "Example Usage" => "example_usage.md",
+        "Example MCMU Workflow" => "example_usage.md",
         "API Reference" => "api.md",
     ],
 )

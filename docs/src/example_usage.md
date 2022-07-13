@@ -8,7 +8,7 @@ DocTestSetup = quote using MonteCarloMeasurementUncertainty end
 using MonteCarloMeasurementUncertainty
 ```
 
-# Example [`MonteCarloMeasurement`](@ref) Usage
+# Example `MCMU` Workflow
 
 ## Generating a correlated `datastream`
 
