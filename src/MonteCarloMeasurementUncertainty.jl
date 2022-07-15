@@ -62,7 +62,7 @@ julia> acc = AccumulatedSeries("Measurement Test");
 julia> for idx ∈ 1:Int(2^18) push!(acc, idx % 512) end;
 
 julia> measurement(acc)
-255.5 ± 2.3
+260.0 ± 150.0
 ```
 """
 function measurement(obs::MonteCarloMeasurement) 

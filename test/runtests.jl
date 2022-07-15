@@ -31,7 +31,7 @@ using Documenter
                 for idx ∈ 1:Int(2^18) push!(acc, idx % 512) end
                 meas = measurement(acc)
                 @test meas.val ≈ 255.5 
-                @test isapprox(meas.err, 2.264245; atol = 1e-6)
+                @test isapprox(meas.err, 147.8016689; atol = 1e-6)
 
                 # check for proper propagated error from Measurements.jl
                 prop_meas = (meas / meas.val)^2 - meas / meas.val + meas / meas.val * exp( - (meas / meas.val) )
