@@ -4,10 +4,6 @@ CurrentModule = MonteCarloMeasurementUncertainty
 DocTestSetup = quote using MonteCarloMeasurementUncertainty end
 ```
 
-```@setup usage
-using MonteCarloMeasurementUncertainty
-```
-
 # Example `MCMU` Workflow
 
 ## Generating a correlated `datastream`
@@ -62,32 +58,31 @@ We note that it's also possible to [`push!`](@ref) single values into [`MonteCar
 
 ## Analyzing the `datastream`
 
+```@setup usage
+using MonteCarloMeasurementUncertainty
+stream_length = Int(2^24)
+datastream = zeros(Float64, stream_length)
+for idx in 1:stream_length
+    datastream[idx] = cos( π * idx / 8 ) + (idx % 4) * sin( π * idx / (4 + idx ÷ 16) )
+end
+t_series = TimeSeries("Time Series", stream_length)
+a_series = AccumulatedSeries("Accumulated Series", stream_length)
+push!(t_series, datastream)
+push!(a_series, datastream)
+```
+
 Finally, we are in a position to analyze the `datastream` collected by either the [`TimeSeries`](@ref) or the [`AccumulatedSeries`](@ref). 
 
 To do so, we can either apply a [`binning_analysis`](@ref) like the following for the [`TimeSeries`](@ref):
 
-```jldoctest usage
-julia> binning_analysis(t_series)
-Binning Analysis Result:
-    Plateau Present:             true
-    Fitted Rx Plateau:           65.94278612184965
-    Autocorrelation time τₓ:     32.471393060924825
-    Effective Datastream Length: 254420
-    Binning Analysis Mean:       -0.0022815233362555834
-    Binning Analysis Error:      0.0014031757854593185
+```@repl usage
+binning_analysis(t_series)
 ```
 
 Similarly, we can apply it to the [`AccumulatedSeries`](@ref):
 
-```jldoctest usage
-julia> binning_analysis(a_series)
-Binning Analysis Result:
-    Plateau Present:             true
-    Fitted Rx Plateau:           65.94278612184965
-    Autocorrelation time τₓ:     32.471393060924825
-    Effective Datastream Length: 254420
-    Binning Analysis Mean:       -0.0022815233362555834
-    Binning Analysis Error:      0.0014031757854593185
+```@repl usage
+binning_analysis(a_series)
 ```
 
 Moreover, one can choose to export either [`MonteCarloMeasurement`](@ref) with the [`measurement`](@ref) function extended from the [`Measurements.jl`](https://juliaphysics.github.io/Measurements.jl/stable/) package.
