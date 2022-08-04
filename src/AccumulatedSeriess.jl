@@ -18,7 +18,6 @@ struct AccumulatedSeries{T <: Number} <: MonteCarloMeasurement
     datastream::BinningAccumulator{T}
 
     AccumulatedSeries{T}(name = "") where {T <: Number} = new( name, BinningAccumulator{T}() ) 
-    AccumulatedSeries(name = "") = AccumulatedSeries{Float64}(name)
 
     function AccumulatedSeries{T}(name = "", stream_length::Int = zero(Int)) where {T}
         if stream_length == zero(Int)
