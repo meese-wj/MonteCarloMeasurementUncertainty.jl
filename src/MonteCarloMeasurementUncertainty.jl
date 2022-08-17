@@ -65,13 +65,10 @@ julia> measurement(acc)
 260.0 ± 150.0
 ```
 """
-function measurement(obs::MonteCarloMeasurement) 
-    result = binning_analysis(obs)
-    return measurement( result.binning_mean, result.binning_error )
-end
+measurement(obs::MonteCarloMeasurement) = measurement( binning_analysis(obs) )
 
 # *******************************************************************************************************************
-# * Defined subtypes of `MonteCarloMeasurement`s **********************************************************************
+# * Defined subtypes of `MonteCarloMeasurement`s ********************************************************************
 # *******************************************************************************************************************
 
 # The misspelling of Series is to conform to Julia standards.
