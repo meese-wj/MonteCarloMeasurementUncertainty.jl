@@ -1,7 +1,7 @@
 name = "MonteCarloMeasurementUncertainty"
 uuid = "0a594e34-94bc-4f62-947f-4b31ef19552b"
 authors = ["W. Joe Meese <meese022@umn.edu> and contributors"]
-version = "0.2.0"
+version = "0.3.0"
 
 [deps]
 Measurements = "eff96d63-e80a-5855-80a2-b1b0885c5ab7"
